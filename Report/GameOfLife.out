@@ -1,0 +1,8 @@
+\BOOKMARK [1][-]{section.1}{Game of Life}{}% 1
+\BOOKMARK [1][-]{section.2}{Algorithm}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Sequential}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Partitioning in 1D}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{Partitioning in 2D}{section.2}% 5
+\BOOKMARK [1][-]{section.3}{OpenMPI and Message Passing}{}% 6
+\BOOKMARK [1][-]{section.4}{Performance Analysis}{}% 7
+\BOOKMARK [1][-]{section.5}{Conclusion}{}% 8

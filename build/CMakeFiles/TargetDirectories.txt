@@ -1,0 +1,3 @@
+/homes/cmsc714-1bv3/hpc/p1/build/CMakeFiles/life_mpi_1d.dir
+/homes/cmsc714-1bv3/hpc/p1/build/CMakeFiles/life_mpi_2d.dir
+/homes/cmsc714-1bv3/hpc/p1/build/CMakeFiles/life_seq.dir

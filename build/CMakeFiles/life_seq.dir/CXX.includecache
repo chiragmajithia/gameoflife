@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/homes/cmsc714-1bv3/hpc/p1/src/life_seq.cpp
+mpi.h
+-
+iostream
+-
+string
+-
+fstream
+-
+vector
+-
+exception
+-
+cstdlib
+-
+sstream
+-
+
