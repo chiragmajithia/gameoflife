@@ -129,17 +129,17 @@ life_mpi_2d/fast:
 .PHONY : life_mpi_2d/fast
 
 #=============================================================================
-# Target rules for targets named life_seq
+# Target rules for targets named life_seq_opt
 
 # Build rule for target.
-life_seq: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 life_seq
-.PHONY : life_seq
+life_seq_opt: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 life_seq_opt
+.PHONY : life_seq_opt
 
 # fast build rule for target.
-life_seq/fast:
-	$(MAKE) -f CMakeFiles/life_seq.dir/build.make CMakeFiles/life_seq.dir/build
-.PHONY : life_seq/fast
+life_seq_opt/fast:
+	$(MAKE) -f CMakeFiles/life_seq_opt.dir/build.make CMakeFiles/life_seq_opt.dir/build
+.PHONY : life_seq_opt/fast
 
 src/life_mpi_1d.o: src/life_mpi_1d.cpp.o
 .PHONY : src/life_mpi_1d.o
@@ -189,29 +189,29 @@ src/life_mpi_2d.cpp.s:
 	$(MAKE) -f CMakeFiles/life_mpi_2d.dir/build.make CMakeFiles/life_mpi_2d.dir/src/life_mpi_2d.cpp.s
 .PHONY : src/life_mpi_2d.cpp.s
 
-src/life_seq.o: src/life_seq.cpp.o
-.PHONY : src/life_seq.o
+src/life_seq_opt.o: src/life_seq_opt.cpp.o
+.PHONY : src/life_seq_opt.o
 
 # target to build an object file
-src/life_seq.cpp.o:
-	$(MAKE) -f CMakeFiles/life_seq.dir/build.make CMakeFiles/life_seq.dir/src/life_seq.cpp.o
-.PHONY : src/life_seq.cpp.o
+src/life_seq_opt.cpp.o:
+	$(MAKE) -f CMakeFiles/life_seq_opt.dir/build.make CMakeFiles/life_seq_opt.dir/src/life_seq_opt.cpp.o
+.PHONY : src/life_seq_opt.cpp.o
 
-src/life_seq.i: src/life_seq.cpp.i
-.PHONY : src/life_seq.i
+src/life_seq_opt.i: src/life_seq_opt.cpp.i
+.PHONY : src/life_seq_opt.i
 
 # target to preprocess a source file
-src/life_seq.cpp.i:
-	$(MAKE) -f CMakeFiles/life_seq.dir/build.make CMakeFiles/life_seq.dir/src/life_seq.cpp.i
-.PHONY : src/life_seq.cpp.i
+src/life_seq_opt.cpp.i:
+	$(MAKE) -f CMakeFiles/life_seq_opt.dir/build.make CMakeFiles/life_seq_opt.dir/src/life_seq_opt.cpp.i
+.PHONY : src/life_seq_opt.cpp.i
 
-src/life_seq.s: src/life_seq.cpp.s
-.PHONY : src/life_seq.s
+src/life_seq_opt.s: src/life_seq_opt.cpp.s
+.PHONY : src/life_seq_opt.s
 
 # target to generate assembly for a file
-src/life_seq.cpp.s:
-	$(MAKE) -f CMakeFiles/life_seq.dir/build.make CMakeFiles/life_seq.dir/src/life_seq.cpp.s
-.PHONY : src/life_seq.cpp.s
+src/life_seq_opt.cpp.s:
+	$(MAKE) -f CMakeFiles/life_seq_opt.dir/build.make CMakeFiles/life_seq_opt.dir/src/life_seq_opt.cpp.s
+.PHONY : src/life_seq_opt.cpp.s
 
 # Help Target
 help:
@@ -222,7 +222,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... life_mpi_1d"
 	@echo "... life_mpi_2d"
-	@echo "... life_seq"
+	@echo "... life_seq_opt"
 	@echo "... rebuild_cache"
 	@echo "... src/life_mpi_1d.o"
 	@echo "... src/life_mpi_1d.i"
@@ -230,9 +230,9 @@ help:
 	@echo "... src/life_mpi_2d.o"
 	@echo "... src/life_mpi_2d.i"
 	@echo "... src/life_mpi_2d.s"
-	@echo "... src/life_seq.o"
-	@echo "... src/life_seq.i"
-	@echo "... src/life_seq.s"
+	@echo "... src/life_seq_opt.o"
+	@echo "... src/life_seq_opt.i"
+	@echo "... src/life_seq_opt.s"
 .PHONY : help
 
 

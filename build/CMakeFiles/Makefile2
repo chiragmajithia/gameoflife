@@ -123,38 +123,38 @@ clean: CMakeFiles/life_mpi_2d.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/life_seq.dir
+# Target rules for target CMakeFiles/life_seq_opt.dir
 
 # All Build rule for target.
-CMakeFiles/life_seq.dir/all:
-	$(MAKE) -f CMakeFiles/life_seq.dir/build.make CMakeFiles/life_seq.dir/depend
-	$(MAKE) -f CMakeFiles/life_seq.dir/build.make CMakeFiles/life_seq.dir/build
+CMakeFiles/life_seq_opt.dir/all:
+	$(MAKE) -f CMakeFiles/life_seq_opt.dir/build.make CMakeFiles/life_seq_opt.dir/depend
+	$(MAKE) -f CMakeFiles/life_seq_opt.dir/build.make CMakeFiles/life_seq_opt.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /homes/cmsc714-1bv3/hpc/p1/build/CMakeFiles  3
-	@echo "Built target life_seq"
-.PHONY : CMakeFiles/life_seq.dir/all
+	@echo "Built target life_seq_opt"
+.PHONY : CMakeFiles/life_seq_opt.dir/all
 
 # Include target in all.
-all: CMakeFiles/life_seq.dir/all
+all: CMakeFiles/life_seq_opt.dir/all
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/life_seq.dir/rule: cmake_check_build_system
+CMakeFiles/life_seq_opt.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /homes/cmsc714-1bv3/hpc/p1/build/CMakeFiles 1
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/life_seq.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/life_seq_opt.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /homes/cmsc714-1bv3/hpc/p1/build/CMakeFiles 0
-.PHONY : CMakeFiles/life_seq.dir/rule
+.PHONY : CMakeFiles/life_seq_opt.dir/rule
 
 # Convenience name for target.
-life_seq: CMakeFiles/life_seq.dir/rule
-.PHONY : life_seq
+life_seq_opt: CMakeFiles/life_seq_opt.dir/rule
+.PHONY : life_seq_opt
 
 # clean rule for target.
-CMakeFiles/life_seq.dir/clean:
-	$(MAKE) -f CMakeFiles/life_seq.dir/build.make CMakeFiles/life_seq.dir/clean
-.PHONY : CMakeFiles/life_seq.dir/clean
+CMakeFiles/life_seq_opt.dir/clean:
+	$(MAKE) -f CMakeFiles/life_seq_opt.dir/build.make CMakeFiles/life_seq_opt.dir/clean
+.PHONY : CMakeFiles/life_seq_opt.dir/clean
 
 # clean rule for target.
-clean: CMakeFiles/life_seq.dir/clean
+clean: CMakeFiles/life_seq_opt.dir/clean
 .PHONY : clean
 
 #=============================================================================

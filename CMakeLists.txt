@@ -5,8 +5,8 @@ SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
 find_package(MPI REQUIRED)
 include_directories(MPI_INCLUDE_PATH include)
 
-add_executable(life_seq src/life_seq.cpp)
-target_link_libraries(life_seq ${INCLUDE_DIRECTORIES})
+add_executable(life_seq_opt src/life_seq_opt.cpp)
+target_link_libraries(life_seq_opt ${INCLUDE_DIRECTORIES})
 
 add_executable(life_mpi_1d src/life_mpi_1d.cpp)
 target_link_libraries(life_mpi_1d ${MPI_LIBRARIES})

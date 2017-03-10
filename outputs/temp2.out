@@ -830,7 +830,6 @@
 29 69
 29 73
 29 83
-2D Num tasks 8, 1 node, debug node 500 Gens 500 x 500
 3 68
 3 70
 3 77
@@ -1231,6 +1230,7 @@
 6 87
 6 90
 6 91
+6.103u 0.007s 0:06.11 99.8%	0+0k 280+56io 1pf+0w
 60 149
 60 150
 60 159
@@ -1378,7 +1378,6 @@
 7 87
 7 90
 7 91
-7.653u 0.340s 0:02.32 344.3%	0+0k 392+5776io 53pf+0w
 70 13
 70 153
 70 164
@@ -1721,4 +1720,5 @@
 99 76
 99 91
 99 93
-Output File Saved in ../OutPat2D/final.data-8.500.500.500.out
+Output Saved in ../OutSeq/final.data-seq.500.500.500.out
+Seq Num tasks 1, 1 node, debug node 500 Gens 500 x 500

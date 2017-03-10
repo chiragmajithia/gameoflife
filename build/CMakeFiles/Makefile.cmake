@@ -46,5 +46,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/life_mpi_1d.dir/DependInfo.cmake"
   "CMakeFiles/life_mpi_2d.dir/DependInfo.cmake"
-  "CMakeFiles/life_seq.dir/DependInfo.cmake"
+  "CMakeFiles/life_seq_opt.dir/DependInfo.cmake"
   )

@@ -191,7 +191,7 @@ MPIEXEC_POSTFLAGS:STRING=
 // run by MPIEXEC.
 MPIEXEC_PREFLAGS:STRING=
 
-//Path to a program.
+//Cleared
 MPI_CXX_COMPILER:FILEPATH=/cell_root/software/openmpi/1.6.5/gnu/default/threaded/sys/bin/mpicxx
 
 //MPI CXX compilation flags
@@ -206,7 +206,7 @@ MPI_CXX_LIBRARIES:STRING=/cell_root/software/openmpi/1.6.5/gnu/4.6.1/threaded/sy
 //MPI CXX linking flags
 MPI_CXX_LINK_FLAGS:STRING= -Wl,-rpath,/usr/local/gcc/lib64  -Wl,-rpath,/cell_root/software/openmpi/1.6.5/gnu/4.6.1/threaded/sys/lib  -Wl,-rpath,/usr/local/ofed/1.5.4.1/lib64  -Wl,--export-dynamic
 
-//Path to a program.
+//Cleared
 MPI_C_COMPILER:FILEPATH=/cell_root/software/openmpi/1.6.5/gnu/default/threaded/sys/bin/mpicc
 
 //MPI C compilation flags
@@ -226,6 +226,9 @@ MPI_EXTRA_LIBRARY:STRING=/cell_root/software/openmpi/1.6.5/gnu/4.6.1/threaded/sy
 
 //MPI library to link against
 MPI_LIBRARY:FILEPATH=/cell_root/software/openmpi/1.6.5/gnu/4.6.1/threaded/sys/lib/libmpi_cxx.so
+
+//Path to a program.
+file_cmd:FILEPATH=/usr/bin/file
 
 
 ########################
@@ -395,4 +398,6 @@ MPI_C_LINK_FLAGS-ADVANCED:INTERNAL=1
 MPI_HEADER_PATH:INTERNAL=MPI_HEADER_PATH-NOTFOUND
 //Scratch variable for MPI lib detection
 MPI_LIB:INTERNAL=MPI_LIB-NOTFOUND
+//ADVANCED property for variable: file_cmd
+file_cmd-ADVANCED:INTERNAL=1
 
