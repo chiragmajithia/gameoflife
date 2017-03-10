@@ -1,1 +1,1 @@
-mpicxx       CMakeFiles/life_seq_opt.dir/src/life_seq_opt.cpp.o  -o life_seq_opt -rdynamic 
+mpicxx      CMakeFiles/life_seq_opt.dir/src/life_seq_opt.cpp.o  -o life_seq_opt -rdynamic 

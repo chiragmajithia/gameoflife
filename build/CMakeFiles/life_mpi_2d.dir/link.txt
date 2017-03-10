@@ -1,1 +1,1 @@
-mpicxx       CMakeFiles/life_mpi_2d.dir/src/life_mpi_2d.cpp.o  -o life_mpi_2d -rdynamic /cell_root/software/openmpi/1.6.5/gnu/4.6.1/threaded/sys/lib/libmpi_cxx.so /cell_root/software/openmpi/1.6.5/gnu/4.6.1/threaded/sys/lib/libmpi.so -ldl -lm -lnuma -lrt -lnsl -lutil -lm -ldl -lnuma -lrt -lnsl -lutil -Wl,-rpath,/cell_root/software/openmpi/1.6.5/gnu/4.6.1/threaded/sys/lib 
+mpicxx      CMakeFiles/life_mpi_2d.dir/src/life_mpi_2d.cpp.o  -o life_mpi_2d -rdynamic /usr/lib/openmpi/lib/libmpi_cxx.so /usr/lib/openmpi/lib/libmpi.so -Wl,-rpath,/usr/lib/openmpi/lib 

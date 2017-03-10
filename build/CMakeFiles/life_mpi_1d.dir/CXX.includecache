@@ -42,13 +42,13 @@ iostream
 sstream
 -
 
-/homes/cmsc714-1bv3/hpc/p1/src/life_mpi_1d.cpp
+/home/chirag/UMD Courses/highperformancecomputing/p1_remote/gameoflife/src/life_mpi_1d.cpp
 mpi.h
 -
 board.cpp
-/homes/cmsc714-1bv3/hpc/p1/src/board.cpp
+/home/chirag/UMD Courses/highperformancecomputing/p1_remote/gameoflife/src/board.cpp
 partition1D.cpp
-/homes/cmsc714-1bv3/hpc/p1/src/partition1D.cpp
+/home/chirag/UMD Courses/highperformancecomputing/p1_remote/gameoflife/src/partition1D.cpp
 string
 -
 cstdlib

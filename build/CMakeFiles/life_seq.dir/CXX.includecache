@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/homes/cmsc714-1bv3/hpc/p1/src/life_seq.cpp
+/home/chirag/UMD Courses/highperformancecomputing/p1_remote/gameoflife/src/life_seq.cpp
 mpi.h
 -
 iostream

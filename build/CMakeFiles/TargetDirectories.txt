@@ -1,3 +1,6 @@
-/homes/cmsc714-1bv3/hpc/p1/build/CMakeFiles/life_mpi_1d.dir
-/homes/cmsc714-1bv3/hpc/p1/build/CMakeFiles/life_mpi_2d.dir
-/homes/cmsc714-1bv3/hpc/p1/build/CMakeFiles/life_seq_opt.dir
+/home/chirag/UMD Courses/highperformancecomputing/p1_remote/gameoflife/build/CMakeFiles/edit_cache.dir
+/home/chirag/UMD Courses/highperformancecomputing/p1_remote/gameoflife/build/CMakeFiles/rebuild_cache.dir
+/home/chirag/UMD Courses/highperformancecomputing/p1_remote/gameoflife/build/CMakeFiles/life_seq_opt.dir
+/home/chirag/UMD Courses/highperformancecomputing/p1_remote/gameoflife/build/CMakeFiles/life_mpi_1d.dir
+/home/chirag/UMD Courses/highperformancecomputing/p1_remote/gameoflife/build/CMakeFiles/life_seq.dir
+/home/chirag/UMD Courses/highperformancecomputing/p1_remote/gameoflife/build/CMakeFiles/life_mpi_2d.dir
