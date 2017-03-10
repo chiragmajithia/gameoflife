@@ -3,6 +3,12 @@
 \BOOKMARK [2][-]{subsection.2.1}{Sequential}{section.2}% 3
 \BOOKMARK [2][-]{subsection.2.2}{Partitioning in 1D}{section.2}% 4
 \BOOKMARK [2][-]{subsection.2.3}{Partitioning in 2D}{section.2}% 5
-\BOOKMARK [1][-]{section.3}{OpenMPI and Message Passing}{}% 6
-\BOOKMARK [1][-]{section.4}{Performance Analysis}{}% 7
-\BOOKMARK [1][-]{section.5}{Conclusion}{}% 8
+\BOOKMARK [1][-]{section.3}{Message Passing}{}% 6
+\BOOKMARK [1][-]{section.4}{Speed Up}{}% 7
+\BOOKMARK [2][-]{subsection.4.1}{Sequential Code - 2D arena representation}{section.4}% 8
+\BOOKMARK [2][-]{subsection.4.2}{Sequential Code - 1D arena representation}{section.4}% 9
+\BOOKMARK [2][-]{subsection.4.3}{Sequential Code - For Loop Unrolling}{section.4}% 10
+\BOOKMARK [2][-]{subsection.4.4}{Parallel Code - 1D Partition}{section.4}% 11
+\BOOKMARK [2][-]{subsection.4.5}{Parallel Code - 2D Partition}{section.4}% 12
+\BOOKMARK [1][-]{section.5}{Performance Analysis}{}% 13
+\BOOKMARK [1][-]{section.6}{Conclusion}{}% 14

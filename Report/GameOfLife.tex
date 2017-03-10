@@ -11,6 +11,7 @@
 \usepackage{array}
 \usepackage{tabu}
 \usepackage{hyperref}
+\graphicspath{ {images/} }
 % If You use Texmaker it will automatically download missing packages
 
 \title{\LARGE \bf MPI:Game of Life}
@@ -95,21 +96,33 @@
 		\end{algorithmic}
 	\end{algorithm}
 	
-	This algorithm becomes the reference for the parallel implementation of the code. The current implementation of the algorithm uses \textbf{for-loop} to compute the neighbors of a cell c(x,y). It is observed that a major \underline{\textbf{speed-up}} can be obtained by un-rolling the for-loop with \textbf{If-Else} statement. \\\\
-	(The optimized code is implemented but not submitted with this submission as the tests were pending. The next draft of the submission will have the optimized code as benchmark for other evaluations)*.
-	
+	This algorithm becomes the reference for the parallel implementation of the code. The current implementation of the algorithm uses \textbf{for-loop} to compute the neighbors of a cell c(x,y). It is observed that a major \underline{\textbf{speed-up}} can be obtained by un-rolling the for-loop with \textbf{If-Else} statement. Details of the code optimization are explained in section:\ref{speedup} \\\\
+		
 	\subsection{Partitioning in 1D}
 	
-	The idea is to divide the computations (counting neighbors and setting states), into number of processes \textbf{(P)} available. For this to work, each process should have relevant information of the arena to perform computations. Moreover, it is important to equally partition the arena to all process, to have maximum computations to performed simultaneously. That is, the overall computation time should not be bottlenecked by one processor which is very heavily loaded while others complete their task quickly.\\\\
+	The idea is to divide the computations (counting neighbors and setting states), into number of processes \textbf{(P)} available. For this to work, each process should have relevant information of the arena to perform computations. Moreover, it is important to equally partition the arena to all process, to have maximum computations to performed simultaneously. That is, the overall computation time should not be bottlenecked by one processor which is very heavily loaded while others complete their task quickly.\\
 	
 	Thus, we divide the array into \textbf{P},  $X \times Y'$  partitions such that $ Y' = Y/P$. Again, it is possible that the $Y/P$ might not be a whole number. Thus, first we assign $ \hat{Y} = round(Y/P)$, to each of the \textbf{P} processes, and then distribute the remaining $(Y \% P)$ process evenly to the individual processes, one by one. For example, if $Y = 8$ is to be divided by $P = 3$ processes, we first distribute $\hat{Y} = 2$ all the three processes and the remaining two is split between $1^{st}$ and $2^{nd}$ process. Thus the processes will have two $X \times 3$ process with final process to be $X \times 2$.
 	
 	\subsection{Partitioning in 2D}
 	
-	As discussed, the most efficient use of the parallel computing will be when the data is equally distributed. In order to achieve high speed-up, it would be better if we can decompose the arena in small blocks of equal dimensions (as computing neighbor is block operation). We thus extend our idea of 1D partitioning to 2D. We first compute the efficient factors of the 'area' of the arena using MPI\_Dims\_create and use MPI\_Type\_vector for efficient extraction of boundary information.
-	(More details in the following submission)
+	As discussed, the most efficient use of the parallel computing will be when the data is equally distributed. In order to achieve high speed-up, it would be better if we can decompose the arena in small blocks of equal dimensions (as computing neighbor is block operation). We thus extend our idea of 1D partitioning to 2D.\\
 	
-	\section{OpenMPI and Message Passing}
+	In order to efficiently partition the data, following MPI functionalities are used.
+	\begin{itemize}
+		\item \textbf{MPI\_Dims\_Create} : Creates a division of processors in a cartesian grid i.e. given the number of processes (nodes), the function returns an efficient way to generate a cartesian grid in which the nodes should be divided. For 2D partitioning the data, we first partition the nodes in 2D.\\
+		
+		\item \textbf{MPI\_Cart\_create} : Once, the partitioning dimensions are known, it is essential to rank the nodes in cartesian coordinates, instead of 1-d. While it is possible to do it manually (for a simple case), the MPI provides this functionality with MPI\_Cart\_create, which creates a new communicator to which topology information has been attached. It is very powerful tool, it allows to set the periodicity and reordering to build a complex topology. However, for the problem at hand, we set the periodicity and reordering to 0, and use it to generate the rank of 'current' the process (node) in 2 dimensions using \textbf{MPI\_Cart\_coords}.\\
+		
+		\item \textbf{MPI\_Cart\_rank} : As it is evident (also described briefly in following section), that simulating a 'generation' requires all the neighbor information. This means that each part of the partitioned data has dependency of boundary information from it's neighbors. Thus, it is essential to transfer this information at the beginning of computation for each generation. After dividing the processes in 2d cartesian space, 	MPI\_Cart\_rank, which determines process rank in communicator given Cartesian location, is used to get the 1-D rank of the process which are neighbor of the 'current' process in 2-D. This information is used providing the process rank to and from which the current process has to send and receive boundary information.\\
+		
+		\item \textbf{MPI\_Type\_vector} : The representation of the 'arena partitions' is done using a 1-D continuous int vector - for the advantages stated in previous section. Again, the message passing function \textbf{MPI\_Isend} and \textbf{MPI\_Irecv} send and receive the information as a data as chunk of continuous memory. Since, in the case of 1D partitioning, only the top and bottom rows are to be passed to neighbors - which inherently are represented as continuous chunks in arena representation array. Thus,  MPI\_recv can use the reference to the 'arena'as receiving sites. However, in case 2D Partitioning, the rows are still stored as continuous elements in 'arena partition', but the column elements are placed at locations of equal strides. This leads to a problem of receiving message. Since, receiving message happens only continuous chunks, one approach is to extract the columns in form of an array, pass the array through MPI\_Isend, allocate a new array at the receiving end, store the information in the new array using MPI\_Recv (blocking) and manually save the information in the 'arena partition' at the required indices. It is important to note that, we need to use a blocking receive for the approach, as receiving and assigning are split in two different steps and we need to synchronize them - which may be inefficient as it may bottleneck the parallel execution of the code (explained in detail in next section). MPI\_Type\_Vector allows us to create a custom a vector (strided) data-type, which will allow to fuse the two steps.\\
+		This allows the use of 'arena partition' directly at the receiving end. MPI, intuitively, masks the positions which are in the stride, and the received information is placed correctly at the 'column' indices of the 1D arena partition.
+		
+		
+	\end{itemize}
+	
+	\section{Message Passing}
 	
 	We need MPI, to transfer the data between "master" - rank 0, process and also to communicate the dependent data amongst the "slave" - rank $>$ 0 processes. Communication strategy is as follows:\\
 	\begin{itemize}
@@ -122,37 +135,74 @@
 	** The implementation uses vector$<$int$>$ type, instead of vector$<$bool$>$, as extracting the data to be transfered - boundary row and columns is efficient in vector$<$int$>$ because c++ compiler uses bits instead of entire byte to represent vector$<$bool$>$, losing easily accessible memory addresses for each element. A more tedious implementation can be to use bool vector, which will improve time and space efficiency of the algorithm.
 	% You can add more sections by copying the command \section
 	
+	\section{Speed Up} \label{speedup}
+	\subsection{Sequential Code - 2D arena representation}
+	The basic implementation of game of life used a 2-D vector for representing arena. This allowed easy computation of the neighboring sites (using directly cartesian coords [i][j]). While this very simple to implement, and there was no performance difference with small dimensional arena, it was found that with final.data (500 $\times$ 500 grid), the time taken to converge 500 iteration took around 40 seconds! The code \textbf{life\_seq} uses the this implementation.
+	
+	\subsection{Sequential Code - 1D arena representation}
+	In order to improve probability of hitting the cache, another implementation of the same algorithm is made using 1D arena representation. life\_seq\_opt uses 1-D arena representation. A huge improvement in time is observed with this implementation - where final.data (500 $\times$ 500 arena) for 500 generations of simulation took 11.24 seconds.The entire implementation is similar to the previous, except we use 1-D arena and use indx2id() and id2indx() methods to transform cartisian to 1D and 1D to cartisian coordinates. It felt, the conversion overhead would take over the cache-hit advantage, however, there was immense improvement in the performance. 
+	
+	\subsection{Sequential Code - For Loop Unrolling}
+	In order, to further enhance the performance of sequential code, the for-loop used in checking the neighbors is unrolled using if-else statements. The performance improved drastically from using 11.24 seconds to 6.12 seconds. The performance of the sequential code in all the implementations in shown in fig.\ref{perimp}.
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width = 0.9\linewidth]{code_optimization}
+		\caption{Performance improvement for sequential algorithm}
+		\label{perimp}
+	\end{figure}
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width = 0.9\linewidth]{1d_optimization}
+		\caption{Comparison of improved performance using loop unrolling for 1d parallelized implementation}
+		\label{1doptimization}
+	\end{figure}
+	
+	\subsection{Parallel Code - 1D Partition}
+	After optimizing the sequential algorithm, further speed up can be achieved by parallelizing the code. It is evident from the problem statement that much of the computations (counting live neighbors) are, more or less, independent of each other. Thus, if this computation is executed simultaneously, we can utilize more computing power of the processor together, to achieve speed-up. Fig.\ref{1doptimization} shows the decline in time for simulating 500 generations of final.data ( 500 $\times$ 500) arena for both - for loop and if else implementations. It is observed that as the partitions become smaller and smaller, the effect of loop rolling diminishes.
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width = 0.9\linewidth]{all_algo_performance}
+		\caption{Performance improvement comparisons for all implementations}
+		\label{speedupall}
+	\end{figure}
+	
+	\subsection{Parallel Code - 2D Partition}
+	Fig. \ref{speedupall} shows comparison of the speed-up achieved by parallelizing the code for both, 1-D and 2-D partitioning schemes. The performance of both implementations are nearly equal, with 1D being slightly quicker (0.01s) in all cases, probably due to less communication overhead. However, intuitively, this should mean that as the number of partitions increases, the speed-up should diminish for 2D implementation. However, it is found that 1D implementation takes slightly more time than 2D, when number of processes reach 32. This could also be due to system delay.
 	\section{Performance Analysis}
 	It is shown in Tab. \ref{pa}, that the performance of parallel code is slightly worse than the pure sequential code due to computational overhead of partitioning and communication of data.
 	However, there is exponential speed up as we increase the number of processes. Finally, the speedup saturates  after 16 processes, as the time to compute overhead balances the speed up due to parallelization.
 	\begin{table}[H]
-		
+		\centering
 		\caption{No. of Processes vs Time (in secs)}
 		\label{pa}
-	\begin{tabu} to 0.8\linewidth { | X[c] | X[c] | }
+	\begin{tabu} to \linewidth { | X[c] | X[c] | X[c] | X[c] | }
 		\hline
-		Processes & Time (in secs) \\
+		Processes & 1D Partition  & 1D Partition & 2D Partition\\
+		 & (For Loop) & (If-Else) & (If-Else)\\
+			& Time (in secs) & Time (in secs) & Time (in secs)\\
 		\hline
-		Sequential  & 11.24 \\
+		Sequential  & 11.24 & 6.11 & 6.11\\
 		\hline
-		(1D Partition) 1 & 12.52 \\
+		 1 & 12.52 & 7.42 & 7.42\\
 		\hline
-		(1D Partition) 2 & 7.38 \\
+		 2 & 7.38 & 4.84 & 5.12\\
 		\hline
-		(1D Partition) 4 & 4.38 \\
+		 4 & 4.38 & 3.12 & 3.17\\
 		\hline
-		(1D Partition) 8 & 2.99 \\
+		 8 & 2.99 & 2.31 & 2.32\\
 		\hline
-		(1D Partition) 16 & 2.84 \\
+		 16 & 2.84 & 1.91 & 1.97\\
 		\hline
-		(1D Partition) 32 & 2.78 \\
+		 32 & 2.78& 2.67& 2.52\\
 		\hline
 	\end{tabu}
 	\end{table}
 	
 \section{Conclusion}
-	 A 3 different implementations where done to simulate Game of Life. 1. Sequential 2. Partitioning data in 1D and communication 3. Partitioning data in 2D and communication. The aim of the project was to understand message passing between processes  using OpenMPI, hence, the optimality of the code was not worked upon - however few improvements are suggested in the report. The speed-up is very drastic as the number of processes are increased but it soon saturates to a constant value - around 2.8 seconds, as the overhead of parallelizing code and communication balances the speed-up achieved. If we further partition the data, there are chances of that the simulation will take more time, as the communication will become the bottle neck.
-	 The code for the above mentioned implementations can be found at \href{https://github.com/chiragmajithia/High-Performance-Computing}{Github Repository}
+	 Three different implementations where done to simulate Game of Life. 1. Sequential 2. Partitioning data in 1D and communication 3. Partitioning data in 2D and communication. The aim of the project was to understand message passing between processes  using OpenMPI, hence, the optimality of the code was not worked upon - however few improvements are suggested in the report. The speed-up is very drastic as the number of processes are increased but it soon saturates to a constant value - around 2.8 seconds, as the overhead of parallelizing code and communication balances the speed-up achieved. If we further partition the data, there are chances of that the simulation will take more time, as the communication will become the bottle neck.
+	 The code for the above mentioned implementations can be found at \href{https://github.com/chiragmajithia/gameoflife}{Github Repository}
 	 
 \end{document}
  

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.2.26)  3 MAR 2017 19:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.2.26)  10 MAR 2017 05:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -451,20 +451,20 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 (./GameOfLife.aux)
 \openout1 = `GameOfLife.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
 
 -- Lines per column: 56 (exact).
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
@@ -496,7 +496,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box38
-Package hyperref Info: Link coloring OFF on input line 23.
+Package hyperref Info: Link coloring OFF on input line 24.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -506,81 +506,81 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count139
 )
-LaTeX Info: Redefining \ref on input line 23.
-LaTeX Info: Redefining \pageref on input line 23.
-LaTeX Info: Redefining \nameref on input line 23.
+LaTeX Info: Redefining \ref on input line 24.
+LaTeX Info: Redefining \pageref on input line 24.
+LaTeX Info: Redefining \nameref on input line 24.
 
 (./GameOfLife.out) (./GameOfLife.out)
 \@outlinefile=\write3
 \openout3 = `GameOfLife.out'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 40--41
+Underfull \hbox (badness 10000) in paragraph at lines 41--42
 
  []
 
-LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 44
+LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 45
 .
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 44
+LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 45
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 44
+LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 45
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 44
+LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 45
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 44.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 45.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 44.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 45.
 
-Underfull \hbox (badness 10000) in paragraph at lines 42--44
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 45--46
+Underfull \hbox (badness 10000) in paragraph at lines 43--45
 
  []
 
 
-Underfull \hbox (badness 2119) in paragraph at lines 48--49
+Underfull \hbox (badness 10000) in paragraph at lines 46--47
+
+ []
+
+
+Underfull \hbox (badness 2119) in paragraph at lines 49--50
 \OT1/ptm/m/n/10 in terms of speed-up, when com-pared to a se-quen-tial
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 48--49
+Underfull \hbox (badness 10000) in paragraph at lines 49--50
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 50--52
+Underfull \hbox (badness 10000) in paragraph at lines 51--53
 
  []
 
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 59.
+put line 60.
 
-Underfull \hbox (badness 10000) in paragraph at lines 98--100
+Underfull \hbox (badness 10000) in paragraph at lines 99--100
 
  []
 
 
-Underfull \hbox (badness 1521) in paragraph at lines 98--100
-\OT1/ptm/m/n/10 (The op-ti-mized code is im-ple-mented but not sub-mit-ted
+Underfull \hbox (badness 10000) in paragraph at lines 99--100
+
  []
 
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
@@ -597,23 +597,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 103--104
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 103--104
+Underfull \hbox (badness 2269) in paragraph at lines 109--110
+[]\OT1/ptm/m/n/10 As dis-cussed, the most ef-fi-cient use of the par-al-lel
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 109--110
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 114--116
+Underfull \hbox (badness 10000) in paragraph at lines 113--114
 
  []
 
 
-Underfull \hbox (badness 7256) in paragraph at lines 116--117
-[]\OT1/ptm/m/n/10 Load the hyper-parameters and ini-tial alive cell
+Underfull \hbox (badness 10000) in paragraph at lines 115--116
+
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 116--117
-
+Underfull \hbox (badness 1917) in paragraph at lines 117--118
+\OT1/ptm/m/n/10 of com-pu-ta-tion for each gen-er-a-tion. Af-ter di-vid-ing
  []
 
 
@@ -622,26 +627,70 @@ Underfull \hbox (badness 10000) in paragraph at lines 117--118
  []
 
 
-Underfull \hbox (badness 3635) in paragraph at lines 118--119
-[]\OT1/ptm/m/n/10 Again, com-pu-ta-tion of cell state de-pends on the
- []
-
-
-Underfull \hbox (badness 1540) in paragraph at lines 118--119
-\OT1/ptm/m/n/10 com-pu-ta-tion for the bound-ary cells. The val-ues of
- []
-
-
-Underfull \hbox (badness 2418) in paragraph at lines 118--119
-\OT1/ptm/m/n/10 use com-mu-ni-ca-tion, it is re-quired to com-mu-ni-cate
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 118--119
+Underfull \hbox (badness 10000) in paragraph at lines 127--129
 
  []
 
 [2]
+Underfull \hbox (badness 7256) in paragraph at lines 129--130
+[]\OT1/ptm/m/n/10 Load the hyper-parameters and ini-tial alive cell
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 129--130
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 130--131
+
+ []
+
+
+Underfull \hbox (badness 3635) in paragraph at lines 131--132
+[]\OT1/ptm/m/n/10 Again, com-pu-ta-tion of cell state de-pends on the
+ []
+
+
+Underfull \hbox (badness 1540) in paragraph at lines 131--132
+\OT1/ptm/m/n/10 com-pu-ta-tion for the bound-ary cells. The val-ues of
+ []
+
+
+Underfull \hbox (badness 2418) in paragraph at lines 131--132
+\OT1/ptm/m/n/10 use com-mu-ni-ca-tion, it is re-quired to com-mu-ni-cate
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 131--132
+
+ []
+
+<images/code_optimization.png, id=81, 578.16pt x 433.62pt>
+File: images/code_optimization.png Graphic file (type png)
+
+<use images/code_optimization.png>
+Package pdftex.def Info: images/code_optimization.png used on input line 150.
+(pdftex.def)             Requested size: 226.79846pt x 170.09697pt.
+
+<images/1d_optimization.png, id=82, 578.16pt x 433.62pt>
+File: images/1d_optimization.png Graphic file (type png)
+
+<use images/1d_optimization.png>
+Package pdftex.def Info: images/1d_optimization.png used on input line 157.
+(pdftex.def)             Requested size: 226.79846pt x 170.09697pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<images/all_algo_performance.png, id=84, 578.16pt x 433.62pt>
+File: images/all_algo_performance.png Graphic file (type png)
+
+<use images/all_algo_performance.png>
+Package pdftex.def Info: images/all_algo_performance.png used on input line 166
+.
+(pdftex.def)             Requested size: 226.79846pt x 170.09697pt.
+ [3 <./images/code_optimization.png (PNG copy)>]
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -653,26 +702,25 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 157.
-[3
-
-]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 157.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 207.
+[4 <./images/1d_optimization.png (PNG copy)> <./images/all_algo_performance.png
+ (PNG copy)>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 207.
  (./GameOfLife.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 157.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 157.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 207.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 207.
 Package rerunfilecheck Info: File `GameOfLife.out' has not changed.
-(rerunfilecheck)             Checksum: 651FA150B055E20A11EEB1676563B948;446.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 157.
+(rerunfilecheck)             Checksum: E61A66C8568A50C6312B993464BCBC7B;901.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 207.
  ) 
 Here is how much of TeX's memory you used:
- 8289 strings out of 494953
- 123648 string characters out of 6180977
- 223787 words of memory out of 5000000
- 11456 multiletter control sequences out of 15000+600000
+ 8332 strings out of 494953
+ 124426 string characters out of 6180977
+ 224095 words of memory out of 5000000
+ 11484 multiletter control sequences out of 15000+600000
  53910 words of font info for 110 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 30i,15n,28p,885b,430s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 30i,15n,28p,1597b,440s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/
@@ -681,10 +729,10 @@ type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/
 utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on GameOfLife.pdf (3 pages, 89188 bytes).
+Output written on GameOfLife.pdf (4 pages, 186401 bytes).
 PDF statistics:
- 95 PDF objects out of 1000 (max. 8388607)
- 81 compressed objects within 1 object stream
- 14 named destinations out of 1000 (max. 500000)
- 65 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 135 PDF objects out of 1000 (max. 8388607)
+ 116 compressed objects within 2 object streams
+ 24 named destinations out of 1000 (max. 500000)
+ 128 words of extra memory for PDF output out of 10000 (max. 10000000)
 
